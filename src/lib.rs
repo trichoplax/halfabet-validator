@@ -1,3 +1,4 @@
+use unidecode::unidecode;
 use wasm_bindgen::prelude::*;
 const ALPHABET: &str = "abcdefghijklmnopqrstuvwxyz";
 
@@ -22,24 +23,17 @@ pub fn halfabet_validation(text: &str) -> String {
 }
 
 fn letters_present(text: &str) -> String {
+    let latinised_text = unidecode(text).to_ascii_lowercase();
     ALPHABET
         .chars()
-        .filter(|&letter| {
-            text.to_ascii_lowercase()
-                .chars()
-                .any(|character| character == letter)
-        })
+        .filter(|&letter| latinised_text.chars().any(|character| character == letter))
         .collect()
 }
 
 fn letters_absent(text: &str) -> String {
+    let latinised_text = unidecode(text).to_ascii_lowercase();
     ALPHABET
         .chars()
-        .filter(|&letter| {
-            !text
-                .to_ascii_lowercase()
-                .chars()
-                .any(|character| character == letter)
-        })
+        .filter(|&letter| !latinised_text.chars().any(|character| character == letter))
         .collect()
 }
