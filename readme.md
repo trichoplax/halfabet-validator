@@ -9,7 +9,7 @@ A validator for entries to a writing challenge on Writing Codidact.
 ## :wrench: Development
 
 ### View
-To access the webpage locally for development, you will need an http server because the `.wasm` file will be blocked from loading if the HTML file is opened directly. For example, if you have Python installed, you can enter the following from the `web` directory:
+To access the webpage locally for development, you will need an HTTP server because the `.wasm` file will be blocked from loading if the HTML file is opened directly. For example, if you have Python installed, you can enter the following from the `web` directory:
 
 ```text
 python -m http.server
@@ -17,7 +17,7 @@ python -m http.server
 
 You can then view the page in your browser at:
 
-http://127.0.0.1:8000/web
+http://127.0.0.1:8000
 
 ### Compile
 Changes to the [Rust](https://rust-lang.org/) code require 2 compilation steps due to targeting the web. If you do not already have `wasm-bindgen-cli` installed you can do so with:
