@@ -11,7 +11,7 @@
                 await init();
                 document
                     .getElementById("candidate-text")
-                    .addEventListener("change", (event) => {
+                    .addEventListener("input", (event) => {
                         document.getElementById("verdict").innerHTML =
                             halfabet_validation(
                                 document.getElementById("candidate-text").value,
@@ -22,7 +22,6 @@
         </script>
         <h1>Halfabet validator</h1>
         <p id="verdict">Add text to the text field.</p>
-        <br />
         <textarea autofocus id="candidate-text" rows="20" cols="80"></textarea>
         <hr />
         <a
