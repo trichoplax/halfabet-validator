@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+        <title>Halfabet validator</title>
+    </head>
+    <body>
+        <script type="module">
+            import init, { halfabet_validation } from "./halfabet_validator.js";
+            const run = async () => {
+                await init();
+                document
+                    .getElementById("candidate-text")
+                    .addEventListener("change", (event) => {
+                        document.getElementById("verdict").innerHTML =
+                            halfabet_validation(
+                                document.getElementById("candidate-text").value,
+                            );
+                    });
+            };
+            run();
+        </script>
+        <h1>Halfabet validator</h1>
+        <p id="verdict">Add text to the text field.</p>
+        <br />
+        <textarea autofocus id="candidate-text" rows="20" cols="80"></textarea>
+        <hr />
+        <a
+            href="https://github.com/trichoplax/halfabet-validator"
+            target="_blank"
+            title="View the source code on GitHub"
+        >
+            Source code (opens in new tab)
+        </a>
+    </body>
+</html>
