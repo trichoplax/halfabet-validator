@@ -1,6 +1,6 @@
 # Halfabet validator
 
-A validator for entries to a writing challenge on Writing Codidact.
+A validator for entries to a [writing challenge on Writing Codidact](https://writing.codidact.com/posts/295120).
 
 ## :link: Webpage
 
